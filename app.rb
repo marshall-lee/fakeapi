@@ -3,6 +3,7 @@ require 'sinatra'
 require 'sinatra/json'
 require 'faker'
 require 'oj'
+require 'securerandom'
 
 set :server, :puma
 
