@@ -17,12 +17,12 @@ helpers do
   end
 end
 
-get '/users.json' do
+get '/users' do
   users = 1_000.times.map { random_user }
 
   json users
 end
 
-get '/users/:id.json' do
+get '/users/:id' do
   json random_user(params[:id])
 end
