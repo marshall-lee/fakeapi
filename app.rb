@@ -18,7 +18,7 @@ helpers do
 end
 
 get '/users' do
-  users = 1_000.times.map { random_user }
+  users = 100.times.map { random_user }
 
   json users
 end
