@@ -2,6 +2,7 @@ require 'bundler/setup'
 require 'sinatra'
 require 'sinatra/json'
 require 'faker'
+require 'oj'
 
 set :server, :puma
 
