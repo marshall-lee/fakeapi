@@ -5,14 +5,22 @@ require 'faker'
 
 set :server, :puma
 
-get '/users.json' do
-  users = 1_000.times.map do
+helpers do
+  def random_user(id = SecureRandom.uuid)
     {
-      id: SecureRandom.uuid,
+      id: id,
       email: Faker::Internet.email,
       name: Faker::Name.name
     }
   end
+end
+
+get '/users.json' do
+  users = 1_000.times.map { random_user }
 
   json users
+end
+
+get '/users/:id.json' do
+  json random_user(params[:id])
 end
