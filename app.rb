@@ -26,3 +26,13 @@ end
 get '/users/:id' do
   json random_user(params[:id])
 end
+
+get '/unicorns' do
+  json []
+end
+
+get '/unicorns/:id' do
+  content_type :json
+  status 404
+  json error: 'not found'
+end
